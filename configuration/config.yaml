@@ -1,0 +1,3 @@
+# Path definition
+data_path: './data/'
+data_filename: 'Financial_Data.csv'
