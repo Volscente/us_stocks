@@ -12,12 +12,12 @@ setuptools.setup(
     long_description_content_type="./README.md",
     packages=(
         setuptools.find_packages() +
-        setuptools.find_packages(where='./pipelines/model_training') +
+        setuptools.find_packages(where='./pipelines/data_preparation') +
         setuptools.find_packages(where='./pipelines/logging_module')
     ),
     entry_points={
         'console_scripts': [
-            'model_training = pipelines.model_training.model_training:run'
+            'model_training = pipelines.job_scripts.data_preparation_job:run'
         ]
     },
     classifiers=[
