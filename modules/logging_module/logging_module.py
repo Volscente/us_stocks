@@ -14,7 +14,7 @@ def get_logger(logger_name):
     """
 
     # Read the log_configuration file
-    with open('configuration/log_configuration.yaml', 'r') as file:
+    with open('./configuration/log_configuration.yaml', 'r') as file:
         log_config = yaml.safe_load(file.read())
         logging.config.dictConfig(log_config)
 
