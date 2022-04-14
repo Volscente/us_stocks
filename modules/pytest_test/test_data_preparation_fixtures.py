@@ -1,10 +1,7 @@
 # Import Standard Modules
 import pytest
-import os
 import yaml
 
-# Setup the project directory
-os.chdir(os.environ['us_stocks_path'])
 
 @pytest.fixture
 def configuration():
