@@ -8,3 +8,14 @@ Analysis of hundreds of financial indicators for US stocks.
 ## Environment Variable
 Setup an environment variable called "us_stocks_path" with the 
 absolute path to the project directory.
+
+# Modules
+
+## Data Preparation
+The module prepares the data for being ingested into the model.
+
+### data_preparation
+It contains the class to perform the data preparation.
+
+### data_preparation_utils
+It contains the function needed by the class in 'data_preparation'
