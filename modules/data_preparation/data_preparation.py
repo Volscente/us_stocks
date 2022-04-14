@@ -20,6 +20,14 @@ class DataPreparation:
         # Read configuration
         self.config = yaml.safe_load(open('./configuration/config.yaml'))
 
+        # Init instance variables
+        self.data = None
 
     def run(self):
+
+        # Load the data
+        self.data = load_data(self.config['year_start'],
+                              self.config['year_end'],
+                              self.config['data_path'],
+                              self.config['data_filename'])
 
