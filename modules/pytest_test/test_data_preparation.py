@@ -12,4 +12,3 @@ from modules.pytest_test.test_data_preparation_fixtures import *
 def test_load_data():
 
     assert 1==1
-    
