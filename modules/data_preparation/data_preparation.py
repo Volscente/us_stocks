@@ -2,6 +2,7 @@
 import os
 import yaml
 
+# Setup the project directory
 os.chdir(os.environ['us_stocks_path'])
 
 # Import Package Modules
