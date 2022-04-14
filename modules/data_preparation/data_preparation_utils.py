@@ -1,5 +1,6 @@
 # Import Standard Modules
 import os
+import sys
 
 # Import Package Modules
 from modules.logging_module.logging_module import get_logger
@@ -22,7 +23,20 @@ def load_data(year_start, year_end, data_path, data_filename):
 
     try:
 
-        logger.info('load_data - Read data')
+        logger.info('load_data - Define time year range')
+
+        # Year range
+        year_range = range(year_start, year_end, 1)
+
+        logger.info('load_data - Year range: {}'.format(year_range))
+
+    except Exception as e:
+
+        logger.error('load_data - Unable to compute the time year range')
+        logger.error(e)
+        sys.exit(1)
+
+
 
 
 

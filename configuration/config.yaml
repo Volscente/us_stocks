@@ -1,3 +1,7 @@
 # Path definition
 data_path: './data/'
 data_filename: 'Financial_Data.csv'
+
+# Year Range
+year_start: 2014
+year_end: 2016
