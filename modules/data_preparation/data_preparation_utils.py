@@ -52,18 +52,21 @@ def load_data(year_start, year_end, data_path, data_filename):
 
             logger.info('load_data - Load the data from {}'.format(year))
 
+            # Define data path
+            csv_data_path = data_path + str(year) + '_' + data_filename
+
             # Load the data from .CSV
-            loaded_data = pd.read_csv(data_path + str(year) + '_' + data_filename,
+            loaded_data = pd.read_csv(csv_data_path,
                                       sep=';',
                                       encoding='latin1',
                                       index_col=0)
 
-            logger.info('load_data - Loaded data dimension: \t {}'.format(len(loaded_data)))
+            logger.info('load_data - Loaded data dimension: {}'.format(len(loaded_data)))
 
             # Concat the data
-            data = pd.concat(data, loaded_data)
+            data = pd.concat([data, loaded_data])
 
-            logger.info('load_data - Data dimension: \t {}'.format(len(data)))
+            logger.info('load_data - Data dimension: {}'.format(len(data)))
 
     except Exception as e:
 
