@@ -3,6 +3,8 @@ import os
 import sys
 
 # Import Package Modules
+import pandas as pd
+
 from modules.logging_module.logging_module import get_logger
 
 # Setup logger
@@ -33,6 +35,26 @@ def load_data(year_start, year_end, data_path, data_filename):
     except Exception as e:
 
         logger.error('load_data - Unable to compute the time year range')
+        logger.error(e)
+        sys.exit(1)
+
+    try:
+
+        logger.info('load_data - Initialize the Pandas DataFrame')
+
+        # Initialize empty dataframe
+        data = pd.DataFrame()
+
+        logger.info('load_data - Load and join datasets')
+
+        # Fetch the dataset by year
+        for year in year_range:
+
+            logger.info('load_data - Load the data from {}'.format(year))
+
+    except Exception as e:
+
+        logger.error('load_data - Unable to load and join datasets')
         logger.error(e)
         sys.exit(1)
 

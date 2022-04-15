@@ -9,3 +9,7 @@ def run():
 
     # Run the job
     data_preparation.run()
+
+
+# TODO - Testing purposes
+run()
