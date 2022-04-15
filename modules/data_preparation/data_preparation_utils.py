@@ -74,6 +74,10 @@ def load_data(year_start, year_end, data_path, data_filename):
         logger.error(e)
         sys.exit(1)
 
+    logger.info('load_data - End')
+
+    return data
+
 
 
 
