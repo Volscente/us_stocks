@@ -10,5 +10,10 @@ from modules.pytest_test.test_data_preparation_fixtures import *
 
 
 def test_load_data():
+    """
+    Test the function modules.data_preparation.data_preparation_utils.load_data
+    :return: Boolean
+    """
+    
 
-    assert 1==1
+
