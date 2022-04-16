@@ -1,10 +1,9 @@
 # Import Standard Modules
 import os
 import sys
-
-# Import Package Modules
 import pandas as pd
 
+# Import Package Modules
 from modules.logging_module.logging_module import get_logger
 
 # Setup logger
@@ -32,7 +31,7 @@ def load_data(year_start, year_end, data_path, data_filename):
         if year_start == year_end:
             year_range = [year_start]
         else:
-            year_range = range(year_start, year_end, 1)  # Case multiple years
+            year_range = arange(year_start, year_end, 1)  # Case multiple years
 
         logger.info('load_data - Year range: {}'.format(year_range))
 
