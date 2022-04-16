@@ -2,6 +2,7 @@
 import os
 import sys
 import pandas as pd
+import numpy as np
 
 # Import Package Modules
 from modules.logging_module.logging_module import get_logger
@@ -27,11 +28,7 @@ def load_data(year_start, year_end, data_path, data_filename):
         logger.info('load_data - Define time year range')
 
         # Year range
-        # Case single year
-        if year_start == year_end:
-            year_range = [year_start]
-        else:
-            year_range = arange(year_start, year_end, 1)  # Case multiple years
+        year_range = np.arange(year_start, year_end + 1, 1, dtype=np.int32)
 
         logger.info('load_data - Year range: {}'.format(year_range))
 
