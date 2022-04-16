@@ -28,7 +28,11 @@ def load_data(year_start, year_end, data_path, data_filename):
         logger.info('load_data - Define time year range')
 
         # Year range
-        year_range = range(year_start, year_end, 1)
+        # Case single year
+        if year_start == year_end:
+            year_range = [year_start]
+        else:
+            year_range = range(year_start, year_end, 1)  # Case multiple years
 
         logger.info('load_data - Year range: {}'.format(year_range))
 
@@ -49,7 +53,6 @@ def load_data(year_start, year_end, data_path, data_filename):
 
         # Fetch the dataset by year
         for year in year_range:
-
             logger.info('load_data - Load the data from {}'.format(year))
 
             # Define data path
@@ -77,9 +80,3 @@ def load_data(year_start, year_end, data_path, data_filename):
     logger.info('load_data - End')
 
     return data
-
-
-
-
-
-
