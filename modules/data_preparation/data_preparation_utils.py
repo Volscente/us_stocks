@@ -56,7 +56,7 @@ def load_data(year_start, year_end, data_path, data_filename):
 
             # Load the data from .CSV
             loaded_data = pd.read_csv(csv_data_path,
-                                      sep=';',
+                                      sep=',',
                                       encoding='latin1',
                                       index_col=0)
 
