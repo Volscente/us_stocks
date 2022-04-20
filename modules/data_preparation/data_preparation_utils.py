@@ -3,6 +3,7 @@ import os
 import sys
 import pandas as pd
 import numpy as np
+from typing import Union
 
 # Import Package Modules
 from modules.logging_module.logging_module import get_logger
@@ -11,9 +12,12 @@ from modules.logging_module.logging_module import get_logger
 logger = get_logger(os.path.basename(__file__).split('.')[0])
 
 
-def load_data(year_start, year_end, data_path, data_filename):
+def load_data(year_start: int,
+              year_end: int,
+              data_path: str,
+              data_filename: str) -> pd.DataFrame:
     """
-    Function that load all the required data in the given year interval
+    Load all the required data in the given year interval
     :param year_start: Integer start year from which read the data
     :param year_end: Integer end year to which read the data
     :param data_path: String path to the data
@@ -76,3 +80,48 @@ def load_data(year_start, year_end, data_path, data_filename):
     logger.info('load_data - End')
 
     return data
+
+
+def feature_label_split(data: pd.DataFrame,
+                        y_column: list,
+                        x_drop_columns: list) -> Union[pd.DataFrame, pd.DataFrame]:
+    """
+    Split the data into features and label
+    :param data: Pandas DataFrame of data
+    :param y_column:
+    :param x_drop_columns:
+    :return:
+    """
+
+    logger.info('feature_label_split - Start')
+
+    try:
+
+        logger.info('feature_label_split - Define the label')
+
+        # Define label
+        y = data[y_column]
+
+    except Exception as e:
+
+        logger.error('feature_label_split - Unable to define the label')
+        logger.error(e)
+        sys.exit(1)
+
+    try:
+
+        logger.info('feature_label_split - Define features')
+
+        # Define features
+        # NOTE: Drop '2015 PRICE VAR [%]' because it is directly related to the Class and it is only valid a posteriori
+        x = data.drop(x_drop_columns, axis=1)
+
+    except Exception as e:
+
+        logger.error('feature_label_split - Unable to define features')
+        logger.error(e)
+        sys.exit(1)
+
+    logger.info('feature_label_split - Start')
+
+    return x, y

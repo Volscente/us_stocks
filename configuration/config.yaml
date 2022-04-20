@@ -5,3 +5,7 @@ data_filename: 'Financial_Data.csv'
 # Year Range
 year_start: 2014
 year_end: 2016
+
+# Features and Class
+y_columns: ['Class']
+x_drop_columns: ['Class', 'Sector', '2015 PRICE VAR [%]']
