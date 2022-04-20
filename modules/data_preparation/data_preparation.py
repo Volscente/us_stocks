@@ -23,6 +23,8 @@ class DataPreparation:
 
         # Init instance variables
         self.data = None
+        self.x = None
+        self.y = None
 
     def run(self):
 
@@ -31,4 +33,9 @@ class DataPreparation:
                               self.config['year_end'],
                               self.config['data_path'],
                               self.config['data_filename'])
+
+        # Split data into features and label
+        self.x, self.y = feature_label_split(self.data,
+                                             self.config['y_columns'],
+                                             self.config['x_drop_columns'])
 

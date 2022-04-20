@@ -88,9 +88,9 @@ def feature_label_split(data: pd.DataFrame,
     """
     Split the data into features and label
     :param data: Pandas DataFrame of data
-    :param y_column:
-    :param x_drop_columns:
-    :return:
+    :param y_column: List of y columns
+    :param x_drop_columns: List of columns to drop for x
+    :return: Pandas DataFrame of x and y
     """
 
     logger.info('feature_label_split - Start')
