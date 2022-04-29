@@ -34,6 +34,9 @@ def test_load_data(configuration, year_start, year_end, expected_length):
     # Verify the dataset length
     assert len(dataset) == expected_length
 
+# TODO test_feature_label_split()
+
+# TODO test_fill_nan()
 
 
 
