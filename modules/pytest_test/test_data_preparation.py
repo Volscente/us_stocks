@@ -36,7 +36,27 @@ def test_load_data(configuration, year_start, year_end, expected_length):
 
 # TODO test_feature_label_split()
 
-# TODO test_fill_nan()
+
+@pytest.mark.parametrize('input_fill_nan_method, expected_output', [
+    ('mean', 0)
+])
+def test_fill_nan(test_data, configuration, input_fill_nan_method, expected_output):
+    """
+    Test the function modules.data_preparation.data_preparation_utils.fill_nan
+    :param test_data: Pandas test dataset
+    :param configuration: Configuration object
+    :param input_fill_nan_method: String fill nan method to test
+    :param expected_output: Integer count of remaining invalid rows
+    :return: Boolean
+    """
+
+    # Call the function 'fill_nan'
+    test_data_filled = fill_nan(test_data, input_fill_nan_method, configuration['valid_fill_nan_methods'])
+
+    # Retrieve invalid rows
+    invalid_rows = test_data_filled.isna().sum().sum()
+
+    assert invalid_rows == expected_output
 
 
 
