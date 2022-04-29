@@ -9,3 +9,7 @@ year_end: 2016
 # Features and Class
 y_columns: ['Class']
 x_drop_columns: ['Class', 'Sector', '2015 PRICE VAR [%]']
+
+# Fill NaN Values
+valid_fill_nan_methods: ['mean']
+fill_nan_method: 'mean'

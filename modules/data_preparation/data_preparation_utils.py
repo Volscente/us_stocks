@@ -127,11 +127,12 @@ def feature_label_split(data: pd.DataFrame,
     return x, y
 
 
-def fill_nan(x: pd.Dataframe, fill_nan_method: str):
+def fill_nan(x: pd.Dataframe, fill_nan_method: str, valid_fill_nan_methods: list):
     """
     Fill NaN values in the features
     :param x: Pandas DataFrame of features
     :param fill_nan_method: String identifies the Fill NaN method
+    :param valid_fill_nan_methods: List of valid Fill NaN methods
     :return: Pandas DataFrame of  features filled
     """
 
@@ -139,10 +140,29 @@ def fill_nan(x: pd.Dataframe, fill_nan_method: str):
 
     try:
 
-        logger.info('fill_nan - Fill NaN values with the Mean')
+        logger.info('fill_nan - Check Fill NaN method validity')
 
-        # Fill NaN values with the mean
-        x_filled = x.fillna(x.mean())
+        # Check if the fill_nan_method is in valid_fill_nan_methods
+        if fill_nan_method not in valid_fill_nan_methods:
+
+            logger.error('fill_nan - Invalid Fill NaN method')
+            sys.exit(1)
+
+    except Exception as e:
+
+        logger.error('fill_nan - Unable to check the Fill NaN method validity')
+        logger.error(e)
+        sys.exit(1)
+
+    try:
+
+        # Switch the fill_nan_method
+        if fill_nan_method == 'mean':
+
+            logger.info('fill_nan - Fill NaN values with the Mean')
+
+            # Fill NaN values with the mean
+            x_filled = x.fillna(x.mean())
 
     except Exception as e:
 
