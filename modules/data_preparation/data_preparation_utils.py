@@ -127,7 +127,9 @@ def feature_label_split(data: pd.DataFrame,
     return x, y
 
 
-def fill_nan(x: pd.Dataframe, fill_nan_method: str, valid_fill_nan_methods: list):
+def fill_nan(x: pd.DataFrame,
+             fill_nan_method: str,
+             valid_fill_nan_methods: list) -> pd.DataFrame:
     """
     Fill NaN values in the features
     :param x: Pandas DataFrame of features
