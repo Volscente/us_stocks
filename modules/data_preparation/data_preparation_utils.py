@@ -122,7 +122,7 @@ def feature_label_split(data: pd.DataFrame,
         logger.error(e)
         sys.exit(1)
 
-    logger.info('feature_label_split - Start')
+    logger.info('feature_label_split - End')
 
     return x, y
 
@@ -134,3 +134,24 @@ def fill_nan(x: pd.Dataframe, fill_nan_method: str):
     :param fill_nan_method: String identifies the Fill NaN method
     :return: Pandas DataFrame of  features filled
     """
+
+    logger.info('fill_nan - Start')
+
+    try:
+
+        logger.info('fill_nan - Fill NaN values with the Mean')
+
+        # Fill NaN values with the mean
+        x_filled = x.fillna(x.mean())
+
+    except Exception as e:
+
+        logger.error('fill_nan - Unable to Fill NaN values')
+        logger.error(e)
+        sys.exit(1)
+
+    logger.info('fill_nan - End')
+
+    return x_filled
+
+
