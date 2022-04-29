@@ -40,5 +40,7 @@ class DataPreparation:
                                              self.config['x_drop_columns'])
 
         # Fill NaN values
-        # self.x = fill_nan(self.x, )
+        self.x = fill_nan(self.x,
+                          self.config['fill_nan_method'],
+                          self.config['valid_fill_nan_methods'])
 
