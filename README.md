@@ -19,3 +19,9 @@ It contains the class to perform the data preparation.
 
 ### data_preparation_utils
 It contains the function needed by the class in 'data_preparation'
+
+## logging_module
+
+### logging_module.py
+If contains the function 'get_logger' to instantiate a logger reading from 
+the file configuration/log_configuration.yaml.
