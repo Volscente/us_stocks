@@ -9,6 +9,16 @@ Analysis of hundreds of financial indicators for US stocks.
 Setup an environment variable called "us_stocks_path" with the 
 absolute path to the project directory.
 
+## Create Wheel Package
+Create wheel file:
+```
+python setup.py bdist_wheel
+```
+Check the created wheel file through the following command:
+```
+check-wheel-contents dist
+```
+
 # Modules
 
 ## Data Preparation
