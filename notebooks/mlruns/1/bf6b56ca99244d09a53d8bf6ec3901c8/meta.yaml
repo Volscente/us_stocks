@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/s.porreca/Projects/us_stocks/notebooks/mlruns/1/bf6b56ca99244d09a53d8bf6ec3901c8/artifacts
+end_time: 1651505130067
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: bf6b56ca99244d09a53d8bf6ec3901c8
+run_uuid: bf6b56ca99244d09a53d8bf6ec3901c8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1651505127899
+status: 3
+tags: []
+user_id: s.porreca
