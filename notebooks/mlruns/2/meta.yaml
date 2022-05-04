@@ -1,0 +1,4 @@
+artifact_location: file:///Users/s.porreca/Projects/us_stocks/notebooks/mlruns/2
+experiment_id: '2'
+lifecycle_stage: active
+name: US Stock Binary Classification - Keras
