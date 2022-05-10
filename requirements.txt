@@ -1,11 +1,11 @@
-pyyaml==6.0
-pandas==1.4.2
-numpy==1.22.3
+pyyaml==5.4.1
+pandas==1.3.5
+numpy==1.21.6
 pytest==7.1.2
 scikit-learn==1.0.2
 plotly==5.7.0
 # for linting
-black==23.3.0
+black==22.3.0
 # for type checking
 mypy==0.950
 # for model training
@@ -14,7 +14,7 @@ tensorflow==2.7.0
 # for experiment tracking
 mlflow==1.25.1
 # for model deployment
-bentoml>1.0.0a1
+bentoml==1.0.0a5
 # for writing model training pipeline
 zenml==0.7.3
 # for maintaining data quality
