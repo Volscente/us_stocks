@@ -9,7 +9,7 @@ Analysis of hundreds of financial indicators for US stocks.
 Setup an environment variable called "us_stocks_path" with the 
 absolute path to the project directory.
 
-## Python version
+## Python Version
 - For some packages, e.g. `zenml`, we need to have a python version between 3.6 to 3.8
 - i'm working on 3.7.10
 - We can install that via `pyenv`
@@ -43,6 +43,19 @@ python setup.py bdist_wheel
 Check the created wheel file through the following command:
 ```
 check-wheel-contents dist
+```
+
+## Install Requirements
+- All the requirements for this project are pinned in `requirements.txt` file
+- Typically your IDE should install them automatically but you can install them via
+```bash
+# Make sure that your venv is sourced!
+
+# Update pip
+pip install --upgrade pip
+
+# install requirements
+pip install -r requirements
 ```
 
 # Modules
