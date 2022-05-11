@@ -55,7 +55,7 @@ check-wheel-contents dist
 pip install --upgrade pip
 
 # install requirements
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 # Modules
