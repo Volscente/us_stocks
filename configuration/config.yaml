@@ -1,5 +1,5 @@
 # Path definition
-data_path: './data/'
+data_path: '../data/'
 data_filename: 'Financial_Data.csv'
 
 # Year Range
