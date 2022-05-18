@@ -3,7 +3,6 @@ import os
 import sys
 import pandas as pd
 import numpy as np
-from typing import Union
 
 # Import Package Modules
 from modules.logging_module.logging_module import get_logger
@@ -56,7 +55,7 @@ def load_data(year_start: int,
             logger.info('load_data - Load the data from {}'.format(year))
 
             # Define data path
-            csv_data_path = data_path + str(year) + '_' + data_filename
+            csv_data_path = f'{os.path.abspath(data_path)}/{str(year)}_{data_filename}'
 
             # Load the data from .CSV
             loaded_data = pd.read_csv(csv_data_path,
@@ -84,7 +83,7 @@ def load_data(year_start: int,
 
 def feature_label_split(data: pd.DataFrame,
                         y_column: list,
-                        x_drop_columns: list) -> Union[pd.DataFrame, pd.DataFrame]:
+                        x_drop_columns: list) -> (pd.DataFrame, pd.DataFrame):
     """
     Split the data into features and label
     :param data: Pandas DataFrame of data
